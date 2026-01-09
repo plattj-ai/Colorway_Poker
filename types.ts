@@ -1,3 +1,10 @@
+export enum GoalType {
+  COMPLEMENTARY = 'COMPLEMENTARY',
+  ANALOGOUS = 'ANALOGOUS',
+  TRIADIC = 'TRIADIC',
+  TETRADIC = 'TETRADIC',
+  SPLIT_COMPLEMENTARY = 'SPLIT_COMPLEMENTARY',
+}
 
 export interface ColorInfo {
   id: number;
@@ -5,12 +12,10 @@ export interface ColorInfo {
   hex: string;
 }
 
-export enum GoalType {
-  COMPLEMENTARY = 'COMPLEMENTARY',
-  ANALOGOUS = 'ANALOGOUS',
-  TRIADIC = 'TRIADIC',
-  TETRADIC = 'TETRADIC',
-  SPLIT_COMPLEMENTARY = 'SPLIT_COMPLEMENTARY',
+export interface CardInstance extends ColorInfo {
+  instanceId: string;
+  isSelected: boolean;
+  patternIndex: number;
 }
 
 export interface GameGoal {
@@ -20,13 +25,9 @@ export interface GameGoal {
   basePoints: number;
 }
 
-export interface CardState extends ColorInfo {
-  instanceId: string;
-  isSelected: boolean;
-  patternIndex: number;
-}
-
-export interface ValidationResult {
-  isValid: boolean;
-  message: string;
+export interface Difficulty {
+  name: string;
+  time: number;
+  multiplier: number;
+  colorClass: string;
 }

@@ -1,5 +1,4 @@
-
-import { ColorInfo, GameGoal, GoalType } from './types';
+import { ColorInfo, GoalType, GameGoal, Difficulty } from './types';
 
 export const COLOR_WHEEL: ColorInfo[] = [
   { id: 0, name: 'Red', hex: '#FF0000' },
@@ -17,34 +16,40 @@ export const COLOR_WHEEL: ColorInfo[] = [
 ];
 
 export const GAME_GOALS: GameGoal[] = [
-  {
-    type: GoalType.COMPLEMENTARY,
-    label: 'Complementary Pair',
-    description: 'Find two colors exactly opposite on the wheel (6 steps apart).',
-    basePoints: 12,
+  { 
+    type: GoalType.COMPLEMENTARY, 
+    label: 'Complementary Pair', 
+    description: 'Find two colors exactly opposite (6 steps apart).', 
+    basePoints: 12 
   },
-  {
-    type: GoalType.ANALOGOUS,
-    label: 'Analogous Trio',
-    description: 'Find three sequential neighbors on the wheel.',
-    basePoints: 18,
+  { 
+    type: GoalType.ANALOGOUS, 
+    label: 'Analogous Trio', 
+    description: 'Find three sequential neighbors.', 
+    basePoints: 18 
   },
-  {
-    type: GoalType.TRIADIC,
-    label: 'Triadic Trio',
-    description: 'Find three colors equidistant (4 steps apart).',
-    basePoints: 25,
+  { 
+    type: GoalType.TRIADIC, 
+    label: 'Triadic Trio', 
+    description: 'Find three colors equidistant (4 steps apart).', 
+    basePoints: 25 
   },
-  {
-    type: GoalType.SPLIT_COMPLEMENTARY,
-    label: 'Split Complementary Trio',
-    description: 'Find one color plus the two colors adjacent to its complement.',
-    basePoints: 31,
+  { 
+    type: GoalType.SPLIT_COMPLEMENTARY, 
+    label: 'Split Complementary', 
+    description: 'Find a base plus the two colors adjacent to its complement.', 
+    basePoints: 31 
   },
-  {
-    type: GoalType.TETRADIC,
-    label: 'Tetradic Four',
-    description: 'Find four colors forming a square (3 steps apart each).',
-    basePoints: 50,
+  { 
+    type: GoalType.TETRADIC, 
+    label: 'Tetradic Four', 
+    description: 'Find four colors forming a square (3 steps apart each).', 
+    basePoints: 50 
   },
+];
+
+export const DIFFICULTIES: Difficulty[] = [
+  { name: 'Easy Deal', time: 60, multiplier: 0.75, colorClass: 'from-emerald-400 to-emerald-700' },
+  { name: 'Real Deal', time: 45, multiplier: 1.0, colorClass: 'from-sky-400 to-sky-700' },
+  { name: 'Color Pro', time: 30, multiplier: 1.5, colorClass: 'from-rose-500 to-rose-800' },
 ];
